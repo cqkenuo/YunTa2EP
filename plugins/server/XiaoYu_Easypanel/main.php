@@ -11,7 +11,7 @@ function XiaoYu_Easypanel_SendData($params){
 
 function XiaoYu_Easypanel_ConfigOption(){
 	return array(
-		'productid' => 'EP后台创建产品的产品ID',
+		'productid' => array('label' => '产品ID（在EP面板设置）', 'placeholder' => '产品ID', 'type' => 'number'),
 	);
 }
 
@@ -46,7 +46,7 @@ function XiaoYu_Easypanel_CreateService($params){
         );
       	return $ret;
     }else{
-    	if($return['msg'] == ""){
+    	if(empty($return['msg'])){
     		$return['msg'] == "Easypanel面板返回空白";
     	}
       	$ret = array(
