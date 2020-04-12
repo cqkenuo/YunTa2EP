@@ -1,8 +1,8 @@
 <?php
 
-//EP对接
-//作者：地狱
-//赞助：idc.netech.cc
+//云塔IDC系统EP对接插件
+//作者：Ru味筱雨
+//赞助：www.sutaidc.com
 
 function XiaoYu_Easypanel_SendData($params){
   	$content = file_get_contents($params['url']."?".http_build_query($params['get']));
@@ -13,10 +13,6 @@ function XiaoYu_Easypanel_ConfigOption(){
 	return array(
 		'productid' => array('label' => '产品ID（在EP面板设置）', 'placeholder' => '产品ID', 'type' => 'number'),
 	);
-}
-
-function XiaoYu_Easypanel_LoginService($params){
-	return '<form action="http://'.$params['server']['serverip'].':3312/vhost/index.php?c=session&a=login" method="POST"><input type="hidden" name="username" value="'.$params['service']['username'].'"><input type="hidden" name="passwd" value="'.$params['service']['password'].'"><button type="submit">点击登陆</button></form>';
 }
 
 function XiaoYu_Easypanel_CreateService($params){
